@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="./src/static/icon/logo.svg">
     <title>TODO list</title>
     <link rel="stylesheet" href="./style.css">
     <script type="module" src="./dist/app.js" defer></script>
 </head>
 
 <body>
-    <section id="main">
-        <section id="header">
+    <main>
+        <header id="header">
             <h1>TODO list</h1>
-            <!-- <li class="feature"></li> -->
-        </section>
+        </header>
         <section id="content">
             <section id="taskList">
                 <!-- <label class="task">
@@ -36,8 +36,8 @@
                 </label> -->
             </section>
         </section>
-        <section id="footer">2025 © HoangTD</section>
-    </section>
+        <footer id="footer">2025 © HoangTD</footer>
+    </main>
 </body>
 
 </html>
@@ -49,4 +49,28 @@
         <textarea class="task__content" placeholder="Note your task here..." autocorrect="off">
         </textarea>
     </label>
+</template>
+
+<template id="templateNoti">
+    <div class="notification">
+        <p class="notification__message ellipsis"></p>
+        <img class="close-btn" src="./src/static/icon/close.svg">
+    </div>
+</template>
+
+<template id="templateDialog">
+    <dialog class="popup" closedby="any">
+        <form method="dialog">
+            <div class="popup__header">
+                <h3 class="popup__title ellipsis">1234</h3>
+                <img class="close-btn" src="./src/static/icon/close.svg">
+            </div>
+            <div class="popup__content">
+
+            </div>
+            <div class="popup__action">
+                <button class="popup__btn">Close</button>
+            </div>
+        </form>
+    </dialog>
 </template>

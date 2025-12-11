@@ -1,0 +1,10 @@
+<svg width='10' height='10' xmlns="http://www.w3.org/2000/svg">
+  <path 
+    stroke="white" 
+    stroke-width="1" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+    fill="transparent"
+    d="M 1.5 1.5 L 8.5 0.75 M 4.5 0.65 l 1 -0.10 M 1.75 2.75 L 8.25 2.75 L 7.5 9 L 2.5 9 L 1.75 2.75 z M 4 2.75 L 4 9 M 6 2.75 L 6 9"
+  />
+</svg>
