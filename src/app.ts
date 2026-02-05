@@ -1,14 +1,20 @@
-import { getElement } from './helpers.js'
+import { createNotificationEl, getElement } from "./shared/helpers/dom.helper.js"
 
-// TODO: modify this function
-const onAddTaskItem = () => {
-    // get template
-    const taskTemplate = getElement<HTMLTemplateElement>('#templateTask')
-    const clone = taskTemplate?.content.cloneNode(true)
+getElement('#createNotification')?.addEventListener('click', () => {
+    createNotification();
+})
 
-    const taskList = getElement<HTMLElement>('#taskList')
+getElement('#createDialog')?.addEventListener('click', () => {
+    createDialog();
+})
 
-    console.log('taskList', { clone, nodeType: clone?.nodeType });
+// 
+const createNotification = () => {
+    createNotificationEl({
+        message: 'This is a notification message!'
+    })
+}
 
-    if (taskList && clone) taskList.insertBefore(clone, taskList.childNodes[taskList.childNodes.length - 2]);
+const createDialog = () => {
+    console.log('Hello, world! dialog')
 }

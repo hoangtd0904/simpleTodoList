@@ -122,7 +122,7 @@ header {
     background-color: var(--primary-color--lighter);
     box-shadow: 0 .5rem .5rem 1rem rgba(0, 0, 0, 0.4);
     height: var(--page-end-height);
-    
+
     h1 {
         letter-spacing: 0.5rem;
     }
@@ -225,36 +225,50 @@ footer {
 }
 
 /* notification */
+#notificationQueue {
+    position: fixed;
+    bottom: var(--page-end-height);
+    left: 1rem;
+    z-index: var(--notification-index-level);
+}
+
+/* TODO: create stack transition here */
 
 .notification--info,
 .notification--success,
-.notification--warn,
-.notification--danger,
+.notification--warning,
+.notification--error,
 .notification {
     position: absolute;
+    cursor: default;
+    left: 0;
+    bottom: var(--offset, 0);
     padding: .5rem 1rem;
     min-width: 8rem;
-    max-width: 50%;
+    max-width: 50dvw;
+    width: max-content;
     text-align: center;
     border-radius: .25rem;
-    bottom: calc(var(--page-end-height) + 1rem);
-    left: 50%;
     background-color: var(--info-color);
     color: var(--dark-color);
-    transform: translateX(-50%);
     box-shadow: 0.25rem 0.25rem 0.5rem 0 var(--shadow-color);
     align-items: center;
-    z-index: var(--notification-index-level);
     display: flex;
-    display: none;
+    transform: translateX(-100%);
+    transform-origin: left;
+    opacity: 0;
+    animation: show 600ms 100ms ease-in-out forwards;
 
     .notification__message {
-        margin-right: 1rem;
         background-color: transparent;
-        width: 80%;
+        min-width: 80%;
         flex: 1;
 
     }
+}
+
+.notification--hiding {
+    animation: hide--left 600ms ease-in-out forwards;
 }
 
 .notification--success {
@@ -262,17 +276,12 @@ footer {
     color: var(--dark-color);
 }
 
-.notification--warn {
+.notification--warning {
     background-color: var(--warning-color);
     color: var(--dark-color);
 }
 
-.notification--danger {
-    background-color: var(--danger-color);
-    color: var(--light-color);
-}
-
-.notification--danger {
+.notification--error {
     background-color: var(--danger-color);
     color: var(--light-color);
 }
@@ -338,4 +347,31 @@ dialog.popup--large {
 dialog::backdrop {
     background-color: var(--shadow-color);
     opacity: 0.8;
+}
+
+@keyframes show {
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hide--top {
+    5% {
+        transform: translateY(1rem);
+    }
+    100% {
+        opacity: 0;
+        transform: none;
+    }
+}
+
+@keyframes hide--left {
+    5% {
+        transform: translateX(1rem);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
 }
