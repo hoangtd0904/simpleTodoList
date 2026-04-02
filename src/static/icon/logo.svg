@@ -1,0 +1,16 @@
+<svg width='20' height='12.5' xmlns="http://www.w3.org/2000/svg">
+  <path 
+    stroke="#588157"
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+    fill="transparent"
+    d="M 7.5 2.5 l 1.25 0 c 5 0 5 7.5 0 7.5 l -6.25 0 m 1 0 l 0 -7.5 m -1 0 l 3 0"
+  />
+  <path 
+    stroke="#588157"
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+    fill="transparent"
+    d="M 12.5 2.5 l 1.25 0 c 5 0 5 7.5 0 7.5 l -2 0 c -5 0 -5 -7.5 0 -7.5 l 1.25 0 z"
+  />
+</svg>

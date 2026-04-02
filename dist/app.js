@@ -1,11 +1,17 @@
-import { getElement } from './helpers.js';
-// TODO: modify this function
-const onAddTaskItem = () => {
-    // get template
-    const taskTemplate = getElement('#templateTask');
-    const clone = taskTemplate === null || taskTemplate === void 0 ? void 0 : taskTemplate.content.cloneNode(true);
-    const taskList = getElement('#taskList');
-    console.log('taskList', { clone, nodeType: clone === null || clone === void 0 ? void 0 : clone.nodeType });
-    if (taskList && clone)
-        taskList.insertBefore(clone, taskList.childNodes[taskList.childNodes.length - 2]);
+var _a, _b;
+import { createNotificationEl, getElement } from "./shared/helpers/dom.helper.js";
+(_a = getElement('#createNotification')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
+    createNotification();
+});
+(_b = getElement('#createDialog')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => {
+    createDialog();
+});
+// 
+const createNotification = () => {
+    createNotificationEl({
+        message: 'This is a notification message!'
+    });
+};
+const createDialog = () => {
+    console.log('Hello, world! dialog');
 };

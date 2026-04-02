@@ -1,0 +1,5 @@
+<svg width='10' height='10' xmlns="http://www.w3.org/2000/svg">
+  <circle r='0.25' stroke='white' fill='white' cx='2' cy='5'/>
+  <circle r='0.25' stroke='white' fill='white' cx='5' cy='5'/>
+  <circle r='0.25' stroke='white' fill='white' cx='8' cy='5'/>
+</svg>
